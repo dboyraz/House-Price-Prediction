@@ -2,9 +2,9 @@
 
 ## How to Run
 
-This project uses "uv" as Python package/project manager.
+This project uses [uv](https://docs.astral.sh/uv/getting-started/installation/) as Python package/project manager.
 
-Please install uv first and then run: "uv sync" so it can create the virtual environment and install all dependencies automatically.
+Please install uv first and then run: ```uv sync``` so it can create the virtual environment and install all dependencies automatically.
 
 
 1. `uv run train.py --data AmesHousing.csv --artifact artifacts/model.joblib` trains the tuned Random Forest pipeline and writes the artifact/metrics.
