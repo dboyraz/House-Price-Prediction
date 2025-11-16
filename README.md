@@ -1,10 +1,42 @@
+# House Price Prediction using Ames Housing dataset
 
+## How to Run
 
 This project uses "uv" as Python package/project manager.
 
 Please install uv first and then run: "uv sync" so it can create the virtual environment and install all dependencies automatically.
 
-# House Price Prediction using Ames Housing dataset
+
+1. `uv run train.py --data AmesHousing.csv --artifact artifacts/model.joblib` trains the tuned Random Forest pipeline and writes the artifact/metrics.
+2. `uv run predict.py --model artifacts/model.joblib --input sample_request.json --output preds.json` loads the artifact and runs prediction with the provided sample input, which generates a file with the prediction.
+3. `uv run serve.py` hosts a Flask app with `/health` and `/predict` endpoints that accepts a json payload.
+4. Example way of accessing the predict endpoint :
+
+  
+
+  On Windows Powershell (only tested on this platform):
+  ```
+  curl -X POST http://127.0.0.1:5000/predict `
+     -H "Content-Type: application/json" `
+     -d '@sample_request.json'
+  ```
+
+  On Windows Command Prompt:
+  ```
+curl -X POST http://127.0.0.1:5000/predict ^
+     -H "Content-Type: application/json" ^
+     -d @sample_request.json
+  ```
+  On Linux/Mac:
+  ```
+  curl -X POST http://127.0.0.1:5000/predict \
+     -H "Content-Type: application/json" \
+     -d @sample_request.json
+  ```
+  
+
+
+
 
 ## 1. Problem Definition
 
