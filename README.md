@@ -4,13 +4,17 @@
 
 This project uses [uv](https://docs.astral.sh/uv/getting-started/installation/) as Python package/project manager.
 
-Please install uv first and then run: ```uv sync``` so it can create the virtual environment and install all dependencies automatically.
+Please install uv first and then run:
+
+ ```uv sync```
+ 
+  so it can create the virtual environment and install all dependencies automatically.
 
 
 1. `uv run train.py --data AmesHousing.csv --artifact artifacts/model.joblib` trains the tuned Random Forest pipeline and writes the artifact/metrics.
 2. `uv run predict.py --model artifacts/model.joblib --input sample_request.json --output preds.json` loads the artifact and runs prediction with the provided sample input, which generates a file with the prediction.
 3. `uv run serve.py` hosts a Flask app with `/health` and `/predict` endpoints that accepts a json payload.
-4. Example way of accessing the predict endpoint :
+4. Access the predict endpoint by opening a terminal (Make sure that you are in the correct folder before running curl command or it won't see the sample json file) :
 
   
 
