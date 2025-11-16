@@ -2,7 +2,7 @@
 
 ## Run from Docker Image
 
-1. `docker build -t ames-predict`
+1. `docker build -t ames-predict .`
 2. `docker run --rm -p 5000:5000 ames-predict`
 3. Make sure that you are in the correct folder before running curl command or it won't see the sample json file:
 
