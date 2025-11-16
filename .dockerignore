@@ -1,0 +1,23 @@
+# Python build artifacts
+__pycache__/
+*.pyc
+*.pyo
+
+# Local environments & tooling
+.venv/
+.env/
+.vscode/
+.idea/
+
+# Git metadata
+.git
+.gitignore
+
+# Data / research assets not needed at runtime
+AmesHousing.csv
+notebook.ipynb
+*.ipynb_checkpoints/
+
+# Misc
+*.log
+.DS_Store

@@ -1,6 +1,26 @@
 # House Price Prediction using Ames Housing dataset
 
-## How to Run
+## Run from Docker Image
+
+1. `docker build -t ames-predict`
+2. `docker run --rm -p 5000:5000 ames-predict`
+3. Make sure that you are in the correct folder before running curl command or it won't see the sample json file:
+
+On Windows Powershell (only tested on this platform):
+  ```
+  curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d '@sample_request.json'
+  ```
+
+  On Windows Command Prompt:
+  ```
+curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d @sample_request.json
+  ```
+  On Linux/Mac:
+  ```
+  curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d @sample_request.json
+  ```
+
+## Run from Source
 
 This project uses [uv](https://docs.astral.sh/uv/getting-started/installation/) as Python package/project manager.
 
@@ -20,22 +40,16 @@ Please install uv first and then run:
 
   On Windows Powershell (only tested on this platform):
   ```
-  curl -X POST http://127.0.0.1:5000/predict `
-     -H "Content-Type: application/json" `
-     -d '@sample_request.json'
+  curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d '@sample_request.json'
   ```
 
   On Windows Command Prompt:
   ```
-curl -X POST http://127.0.0.1:5000/predict ^
-     -H "Content-Type: application/json" ^
-     -d @sample_request.json
+curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d @sample_request.json
   ```
   On Linux/Mac:
   ```
-  curl -X POST http://127.0.0.1:5000/predict \
-     -H "Content-Type: application/json" \
-     -d @sample_request.json
+  curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d @sample_request.json
   ```
   
 
